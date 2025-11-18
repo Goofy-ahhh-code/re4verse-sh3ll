@@ -4,13 +4,13 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 
-int main() {
+int main(int argc, char *argv[]) {
     int server_fd;
     int client_fd;
     struct sockaddr_in addr;
     char buffer[1024];
     char *ip = "127.0.0.1";
-    int port = 8080;
+    int port = atoi(argv[1]);
     int chat = 1;
 
     server_fd = socket(AF_INET, SOCK_STREAM, 0);
