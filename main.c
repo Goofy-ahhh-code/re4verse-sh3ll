@@ -35,9 +35,13 @@ int main(int argc, char *argv[]) {
             if (n > 0) {
                 buffer[n] = '\0';
                 printf("%s\n", buffer);
-                if (strcmp(buffer, "exit") == 0) {
-                    chat = 0;
+                if (strstr(buffer, "end") != NULL) {
+                    printf("Ending chat.\n");
+                    close(client_fd);
+                    close(server_fd);
+                    exit(0);
                 }
+
             }
         }
     }
